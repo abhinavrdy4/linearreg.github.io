@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    opacity: 0;            /* Start with opacity 0 */
+    transition: opacity 0.5s ease-in-out; /* Transition effect for opacity */
+  }
+
+  body.fade-in {
+    opacity: 1;
+}
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+  }
+  
+  canvas {
+    max-width: 600px;
+    margin-top: 1em;
+  }
+  
+  /* Main container for side-by-side layout */
+.container {
+    display: flex;
+    gap: 20px; /* Space between sections */
+    padding: 20px;
+}
+
+/* Left: Input Section */
+.input-section {
+    flex: 1;
+    max-width: 300px; /* Adjust width as needed */
+}
+
+/* Scrollable Points List */
+#point-list {
+    max-height: 200px; /* Set the max height for scroll */
+    overflow-y: auto;  /* Enables vertical scrolling */
+    border: 1px solid #ddd;
+    padding: 10px;
+    list-style: none;
+}
+
+/* Right: Chart Section */
+.chart-section {
+    flex: 1;
+    display: flex;
+    width:50vw;
+    flex-direction: column;
+    align-items: center;
+}
+#myChart {
+    width: 100% !important; /* Make the canvas take the full width of its container */
+    height: 400px; /* Set a fixed height for the chart */
+}

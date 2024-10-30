@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linear Regression Best Fit Line</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Best Fit Line Calculator</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="donate.html">Donate</a>
+      <a href="support.html">Support Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+        <!-- Points Input Section -->
+        <div class="input-section">
+            <h3>Enter Points</h3>
+            <label for="x">X-coordinate:</label>
+            <input type="number" id="x" placeholder="Enter x">
+            <label for="y">Y-coordinate:</label>
+            <input type="number" id="y" placeholder="Enter y">
+            <button id="add-point-button" onclick="addPoint()">Add Point</button>
+            
+            <h4>Points List</h4>
+            <ul id="point-list"></ul> <!-- Points list will have a scroll if it exceeds max height -->
+            <div id="best-fit-slope" style="margin-top: 10px;">
+                Best Fit Slope: <span id="slope-value">N/A</span>
+            </div>
+        </div>
+    
+        <!-- Best Fit Line Section -->
+        <div class="chart-section">
+            <h3>Best Fit Line</h3>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

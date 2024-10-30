@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <style>
+        /* Basic Styling */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; opacity: 0;            /* Start with opacity 0 */
+            transition: opacity 0.5s ease-in-out; /* Transition effect for opacity */}
+        
+        /* Navbar Styling */
+        body.fade-in {
+    opacity: 1;
+}
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Main Content Styling */
+        .container { 
+            max-width: 600px; 
+            margin: 2em auto; 
+            text-align: center; 
+            padding: 2em;
+        }
+        
+        /* Donate Button Styling */
+        .donate-button { 
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 1em 2em; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 1.2em; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="donate.html">Donate</a>
+        <a href="support.html">Support Us</a>
+    </div>
+    
+    <!-- Page Content -->
+    <div class="container">
+        <h1>Donate</h1>
+        <p>Your contributions help us keep this platform running and improving. Any amount is greatly appreciated!</p>
+        <button class="donate-button" onclick="window.location.href='https://www.paypal.com/donate'">Donate Now</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("fade-in");
+        });
+    
+        // Fade-out effect when clicking on links
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                const target = this.href;
+                document.body.classList.remove("fade-in");
+                document.body.style.opacity = "0";
+                setTimeout(() => {
+                    window.location.href = target;
+                }, 500); // Match the duration with the CSS transition
+            });
+        });
+    </script>
+</body>
+</html>
